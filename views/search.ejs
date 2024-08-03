@@ -1,0 +1,23 @@
+<div class="author">
+    <h2 class="author_heading">
+        Search Results
+    </h2>
+</div>
+
+<section class="articles">
+    <ul class="articles_ul">
+        <% if (data && data.length > 0) { %>
+            <% data.forEach(post => { %>
+                <li>
+                    <a href="/post/<%= post._id %>">
+                        <span><%= post.title %></span>
+                        <span class="article-list_date"><%= post.createdAt.toDateString() %></span>
+                    </a>
+                </li>
+            <% }) %>
+        </ul>
+        <% }else { %>
+            <li class="no-post">No posts available.</li>
+        <% } %>
+        
+</section>

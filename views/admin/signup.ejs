@@ -1,0 +1,29 @@
+<div class="signup">
+<h2>Register </h2>
+<form action="/Register" method="POST">
+    <div class="form-item">
+        <label for="name"><b>NAME</b></label>
+        <input type="text" placeholder="Enter Your Name" name="name">
+    </div>
+    <div class="form-item">
+        <label for="email"><b>EMAIL</b></label>
+        <input type="email" placeholder="Enter Your Email" name="email">
+    </div>
+    <div class="form-item">
+        <label for="Username"><b>USERNAME</b></label>
+        <input type="text" placeholder="Enter Username" name="username">
+    </div>
+    <div class="form-item">
+        <label for="Username"><b>PASSWORD</b></label>
+        <input type="password" placeholder="Enter password" name="password">
+    </div>
+    <input type="submit" value="Register" class="btn">
+</form>
+<a href="../admin/">Already a user? Click here to Sign In</a>
+</div>
+<script >
+    document.addEventListener('DOMContentLoaded', function() {
+      const logout = document.querySelector('#logout');
+      logout.style.visibility = "hidden";
+    });
+</script>

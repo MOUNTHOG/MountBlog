@@ -1,0 +1,13 @@
+<div class="container">
+    <h2><%= data.title %></h2>
+    <h3> - <%= user.username %></h3>
+    <div class="article">
+        <%= data.body %>
+    </div>
+</div>
+<script >
+    document.addEventListener('DOMContentLoaded', function() {
+      const logout = document.querySelector('#logout');
+      logout.style.visibility = "visible";
+    });
+</script>

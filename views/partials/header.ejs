@@ -1,0 +1,59 @@
+<header class="header">
+    <a href="/" class="header_logo" alt="logo"><img class="lazyload"  loading="lazy" data-src="./img/MountBlog.png" src="./img/MountBlog.png"></a>
+    <nav class="header_nav">
+        <ul>
+            <li>
+                <a href="/" class="">Home</a>
+            </li>
+
+            <li>
+                <a href="../admin" class="">Login In</a>
+            </li>
+
+            <li>
+                <a href="../admin/register" class="">Sign Up</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="header_button">
+        <button class="searchBtn" aria-expanded="false">
+            Search
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+            </svg>
+        </button>
+    </div>
+</header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    let lazyloadImages = document.querySelectorAll("img.lazyload");
+    let lazyloadThrottleTimeout;
+
+    function lazyload() {
+        if (lazyloadThrottleTimeout) {
+            clearTimeout(lazyloadThrottleTimeout);
+        }
+
+        lazyloadThrottleTimeout = setTimeout(function() {
+            let scrollTop = window.pageYOffset;
+            lazyloadImages.forEach(function(img) {
+                if (img.offsetTop < (window.innerHeight + scrollTop)) {
+                    img.src = img.getAttribute('data-src');
+                    img.classList.remove('lazyload');
+                }
+            });
+            if (lazyloadImages.length == 0) { 
+              document.removeEventListener("scroll", lazyload);
+              window.removeEventListener("resize", lazyload);
+              window.removeEventListener("orientationChange", lazyload);
+            }
+        }, 20);
+    }
+
+    document.addEventListener("scroll", lazyload);
+    window.addEventListener("resize", lazyload);
+    window.addEventListener("orientationChange", lazyload);
+});
+</script>

@@ -1,0 +1,23 @@
+<div class="signin">
+    <h2>Log In</h2>
+<form action="/admin" method="POST">
+    <div class="form-item">
+        <label for="Username"><b>USERNAME</b></label>
+        <input type="text" placeholder="Enter Username" name="username">
+    </div>
+    <div class="form-item">
+        <label for="Username"><b>PASSWORD</b></label>
+        <input type="password" placeholder="Enter password" name="password">
+    </div>
+    <div class="form-item">
+        <input type="submit" value="Submit" class="btn">
+    </div>
+</form>
+    <a href="../admin/register">New user? Click here to Register</a>
+</div>
+<script >
+    document.addEventListener('DOMContentLoaded', function() {
+      const logout = document.querySelector('#logout');
+      logout.style.visibility = "hidden";
+    });
+</script>

@@ -1,0 +1,31 @@
+<div class="author">
+    <div class="author_heading">Welcome To MountBlog!!</div>
+    <p>Unleashing Insights, One Byte at a Time</p>
+</div>
+
+<img src="./img/hero-image.jpg" alt="" class="hero-img" height="528" width="981">
+
+<section class="articles">
+    <h2 class="articles_heading">Latest Posts</h2>
+    <ul class="articles_ul">
+        <% data.forEach(post => { %>
+            <li>
+                <a href="/blog/<%= post._id %>">
+                    <span><%= post.title %></span>
+                    <span class="article-list_date"><%= post.createdAt.toDateString() %></span>
+                </a>
+            </li>
+        <% }) %>
+    </ul>
+
+    <% if (nextPage !== null) { %>
+        <a href="/?page=<%= nextPage %>" class="pagination">&lt; View older</a>
+    <% } %>
+    
+</section>
+<script >
+    document.addEventListener('DOMContentLoaded', function() {
+      const logout = document.querySelector('#logout');
+      logout.style.visibility = "hidden";
+    });
+</script>
